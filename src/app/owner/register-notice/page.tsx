@@ -94,9 +94,9 @@ function NoticeRegisterContent() {
 
       {/* 폼 */}
       <form onSubmit={handleSubmit} className="w-full">
-        <div className="w-full grid grid-cols-3 gap-5">
+        <div className="w-full grid desktop:grid-cols-3 tablet:grid-cols-3 gap-5 mobile:grid-cols-1">
           {/* 시급 */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mobile:col-span-2">
             <Input
               name="hourlyPay"
               type="number"
@@ -114,7 +114,7 @@ function NoticeRegisterContent() {
           </div>
 
           {/* 시작 일시 */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mobile:col-span-2">
             <Input
               name="startsAt"
               type={dateInputType}
@@ -132,7 +132,7 @@ function NoticeRegisterContent() {
           </div>
 
           {/* 근무 시간 */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mobile:col-span-2">
             <Input
               name="workhour"
               type="number"
@@ -150,7 +150,7 @@ function NoticeRegisterContent() {
           </div>
 
           {/* 공고 설명 */}
-          <div className="w-full mt-1 flex flex-col col-span-3 text-body-2-regular">
+          <div className="w-full mt-1 flex flex-col col-span-3 mobile:col-span-1 text-body-2-regular">
             <label htmlFor="description" className="mb-2 text-gray-40">
               공고 설명
             </label>
@@ -165,7 +165,7 @@ function NoticeRegisterContent() {
           </div>
 
           {/* 제출 버튼 */}
-          <div className="col-start-2">
+          <div className="col-start-2 mobile:col-start-1">
             <Button variant="primary" className="w-full" size="large" type="submit" disabled={isLoading}>
               {isLoading ? (mode === "edit" ? "수정 중..." : "등록 중...") : mode === "edit" ? "수정하기" : "등록하기"}
             </Button>
